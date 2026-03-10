@@ -56,14 +56,15 @@ describe('ThemeToggle', () => {
     expect(button.innerHTML).toContain('path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"');
   });
 
-  it('shows sun icon in dark mode', () => {
+  it('shows sun icon in dark mode when toggled', () => {
     render(<ThemeToggle />);
-    const button = screen.getByRole('button');
+    const button = screen.getByRole('button', { name: /switch to dark theme/i });
     
-    // Switch to dark
-    document.documentElement.setAttribute('data-theme', 'dark');
+    // Click to switch to dark
+    fireEvent.click(button);
     
-    // Check for sun icon paths
-    expect(button.innerHTML).toContain('circle cx="12" cy="12" r="4"');
+    // Re-render and check icon changed
+    const darkButton = screen.getByRole('button', { name: /switch to light theme/i });
+    expect(darkButton.innerHTML).toContain('circle cx="12" cy="12" r="4"');
   });
 });
