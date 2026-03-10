@@ -1,0 +1,7 @@
+STATUS: done
+BUILD_CMD: npm run build
+TEST_CMD: npm test
+LINT_CMD: npx eslint src
+CI_NOTES: React+Vite project created, baseline build successful, ESLint configured
+BASELINE: pass
+EXISTING_CODE: false
