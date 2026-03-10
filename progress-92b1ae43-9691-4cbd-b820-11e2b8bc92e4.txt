@@ -1,5 +1,0 @@
-=== US-002: Theme Toggle Feature Implementation ===
-COMPLETED: 2026-03-10T13:23:58+03:00
-FILES CHANGED: src/components/ThemeToggle.tsx, src/components/Counter.tsx, src/App.tsx, src/index.css, src/__tests__/ThemeToggle.test.tsx, src/__tests__/Counter.test.tsx, eslint.config.js, vite.config.ts
-KEY DECISIONS: Used CSS custom properties with data-theme attribute for theming. Implemented localStorage persistence. Used inline SVG icons for sun/moon. Added jsdom environment to vitest config.
-DEPENDENCIES ADDED: None
