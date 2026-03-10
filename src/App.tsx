@@ -1,5 +1,17 @@
+import { ThemeToggle } from './components/ThemeToggle';
+import { Counter } from './components/Counter';
+
 function App() {
-  return <h1>DiagTest Counter v3</h1>
+  return (
+    <div className="app">
+      <header className="header">
+        <ThemeToggle />
+      </header>
+      <main className="counter-container">
+        <Counter />
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;

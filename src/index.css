@@ -1,12 +1,156 @@
 :root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --counter-bg: #f0f0f0;
+  --btn-primary: #3b82f6;
+  --btn-primary-hover: #2563eb;
+  --btn-danger: #ef4444;
+  --btn-danger-hover: #dc2626;
+  --btn-secondary: #6b7280;
+  --btn-secondary-hover: #4b5563;
+  --border-color: #e5e7eb;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
 }
 
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a3a3a3;
+  --counter-bg: #3d3d3d;
+  --btn-primary: #60a5fa;
+  --btn-primary-hover: #3b82f6;
+  --btn-danger: #f87171;
+  --btn-danger-hover: #ef4444;
+  --btn-secondary: #9ca3af;
+  --btn-secondary-hover: #d1d5db;
+  --border-color: #404040;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 480px;
+  padding: 2rem;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.theme-toggle {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--counter-bg);
+}
+
+.counter-container {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.counter-display {
+  background: var(--counter-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.counter-value {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+}
+
+.counter-controls {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.counter-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.counter-btn.increment {
+  background: var(--btn-primary);
+  color: white;
+}
+
+.counter-btn.increment:hover {
+  background: var(--btn-primary-hover);
+}
+
+.counter-btn.decrement {
+  background: var(--btn-danger);
+  color: white;
+}
+
+.counter-btn.decrement:hover {
+  background: var(--btn-danger-hover);
+}
+
+.counter-btn.reset {
+  background: var(--btn-secondary);
+  color: white;
+}
+
+.counter-btn.reset:hover {
+  background: var(--btn-secondary-hover);
 }
